@@ -34,5 +34,5 @@ for requested_topping in requested_toppings:
     if requested_topping in available_toppings:
         print("Adding " + requested_topping + ".")
     else:
-        print("we do not have A "+requested_topping+".")
+        print("we do not have a "+requested_topping+".")
         print("add a new line")
