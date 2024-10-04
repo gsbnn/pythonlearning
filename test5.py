@@ -34,5 +34,5 @@ for requested_topping in requested_toppings:
     if requested_topping in available_toppings:
         print("Adding " + requested_topping + ".")
     else:
-        print("we do not have a "+requested_topping+".")
+        print("we do not have  "+requested_topping+".")
         print("在dev中加一行")
