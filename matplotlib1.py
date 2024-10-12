@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+# 绘制折线图 plt.plot()
 
 # 如果指定横坐标，横坐标从0开始
 input_values = [1, 2, 3, 4, 5]
