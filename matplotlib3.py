@@ -8,7 +8,7 @@ while True:
     # 创建列表，用于颜色映射
     point_list = list(range(rw.num_points))
 
-    # pyplot显示用法
+    # pyplot显式用法
     # The "Axes" interface is how Matplotlib is implemented, 
     # and many customizations and fine-tuning end up being done at this level.
     fig = plt.figure(figsize=(6,4))

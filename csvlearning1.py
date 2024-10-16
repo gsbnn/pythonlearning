@@ -26,7 +26,7 @@ with open(filename) as f:
 # 创建图片
 fig = plt.figure(figsize=(10, 6))
 weather_fig = fig.subplots()
-weather_fig.plot(dates, highs, c='red', alpha=0.7)
+weather_fig.plot(dates, highs, c='red', alpha=0.7) # Alpha 值为0表示完全透明， 1（默认设置） 表示完全不透明。
 weather_fig.plot(dates, lows, c='blue', alpha=0.7)
 
 # 设置图形格式
@@ -41,5 +41,5 @@ plt.show()
 
 """
 1.这里解释一下参数类型：Iterable[str]，它表示每次输出为字符串对象的可迭代体对象，如列表，文件等。
-2.重新认识列表：list是一个可以存放任意对象（如str, int, 自定义对象）的对象
+2.重新认识列表和字典：list是一个可以存放任意对象（如str, int, 自定义对象）的对象，同样字典中的值也可以是任意对象
 """
