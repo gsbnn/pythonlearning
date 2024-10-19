@@ -22,7 +22,7 @@ for value in range(min_result, max_result+1):
 hist = pygal.Bar() #创建一个Bar实例
 
 hist.title = "Results of rolling one D6 1000 times."
-hist.x_labels = list(range(min_result,max_result+1))
+hist.x_labels = list(range(min_result,max_result+1)) # 设置横坐标
 hist.x_title = "Result"
 hist.y_title = "Frequency of Result"
 
