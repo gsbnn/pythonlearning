@@ -27,3 +27,4 @@
 9. 了解HTTP常见请求可以参考以下链接：  
     > https://developer.aliyun.com/article/1476820  
     > https://blog.csdn.net/lsoxvxe/article/details/132147475  
+10. 学习`Pygame`可以参考[快速指南](https://www.pygame.org/docs/)
