@@ -27,4 +27,12 @@
 9. 了解HTTP常见请求可以参考以下链接：  
     > https://developer.aliyun.com/article/1476820  
     > https://blog.csdn.net/lsoxvxe/article/details/132147475  
-10. 学习`Pygame`可以参考[快速指南](https://www.pygame.org/docs/)
+10. 学习`Pygame`可以参考[快速指南](https://www.pygame.org/docs/)  
+
+11. 对Python中`继承`的理解  
+    - 对于`class Son(Father):`而言Son到底继承了Father的什么？  
+    答：继承的是`方法`而不是`属性`,如果Son中没有重写Father的方法，那么Son将继承Father的方法；反之，使用Son自己的方法，丢弃Father的同名方法。  
+    - 那么属性是如何被继承的？  
+    答：如果属性一般定义在`__init__(self, ...)`方法中，因此如果Son没有重写`__init__(self, ...)`方法则属性也将被继承；反之，Father的属性将全部丢弃。  
+    - 如果在Son中重新了方法，如何再次调用父类方法？  
+    答：使用`super()`函数,如在Son类的`__init__(self, ...)`方法中写入`super().__init__(self, ...)`,可调用Father方法，同时基础Father的属性。
