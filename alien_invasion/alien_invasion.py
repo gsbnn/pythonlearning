@@ -5,6 +5,7 @@ from settings import Settings
 from ship import Ship
 from game_stats import GameStats
 from button import Button
+from scoreboard import Scoreboard
 from pygame.sprite import Group
 
 def run_game():
@@ -21,6 +22,7 @@ def run_game():
     bullets = Group()
     aliens = Group()
     play_button = Button(ai_settings, screen, "Play")
+    sb = Scoreboard(ai_settings, screen, stats)
 
     # 创建外星人群
     gf.create_fleet(ai_settings, screen, ship, aliens)
@@ -29,17 +31,17 @@ def run_game():
     while True:
 
         # 监视键盘和鼠标事件
-        gf.check_events(ship, ai_settings, screen, aliens, bullets, stats, play_button)
+        gf.check_events(ship, ai_settings, screen, aliens, bullets, stats, sb, play_button)
         
         # 更新元素
         if stats.game_active:   
             # 确定哪些功能在激活状态下运行
             ship.update() # 更新坐标
-            gf.update_bullets(ai_settings, screen, ship, bullets, aliens) # 更新坐标
-            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets) 
+            gf.update_bullets(ai_settings, screen, stats, sb, ship, bullets, aliens) # 更新坐标
+            gf.update_aliens(ai_settings, stats, sb, screen, ship, aliens, bullets) 
         
         # 更新屏幕
-        gf.update_screen(ai_settings, screen, stats, ship, bullets, aliens, play_button) #重绘屏幕
+        gf.update_screen(ai_settings, screen, stats, sb, ship, bullets, aliens, play_button) #重绘屏幕
 
 
 run_game()
