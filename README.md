@@ -29,10 +29,23 @@
     > https://blog.csdn.net/lsoxvxe/article/details/132147475  
 10. 学习`Pygame`可以参考[快速指南](https://www.pygame.org/docs/)  
 
-11. 对Python中`继承`的理解  
+11. 关于类的基本内容  
+类包含两个基本内容：方法和属性。  
+方法包括3类：instance_method（实例方法）, class_method（类方法）, static_method（静态方法）。  
+属性包括2类：类属性和实例属性 。 
+
+12. 类本身是否可以调用自己的方法？  
+答：可以，类本身可以调用class_method（默认第一个传入参数为类本身，而不是类的实例）和static_method（只是定义在类中的一个函数），而instance_method必须先创建类的实例才可调用，`__init__(self, ...)`是一个特殊的instance_method，用来创建一个实例，包括实例及实例属性等。  
+
+13. instance_method和类的实例及实例属性的关系是什么？  
+类的实例和实例属性依赖于instance_method而存在，如果instance_method中没有定义某个实例属性，则类的实例也就没有这个实例属性。  
+
+14. 关于class_method的具体应用参照[链接](https://geek-docs.com/python/python-ask-answer/211_hk_1710454843.html#google_vignette)
+
+15. 对Python中`继承`的理解  
     - 对于`class Son(Father):`而言Son到底继承了Father的什么？  
-    答：继承的是`方法`而不是`属性`,如果Son中没有重写Father的方法，那么Son将继承Father的方法；反之，使用Son自己的方法，丢弃Father的同名方法。  
+    答：继承的是`所有方法`和`类属性`,如果Son中没有重写Father的方法，那么Son将继承Father的方法；反之，使用Son自己的方法，丢弃Father的同名方法。  
     - 那么属性是如何被继承的？  
-    答：属性一般定义在`__init__(self, ...)`方法中，因此如果Son没有重写`__init__(self, ...)`方法，则Father的属性也将被继承；反之，Father的属性将全部丢弃。  
+    答：实例属性一般定义在`__init__(self, ...)`方法中，因此如果Son没有重写`__init__(self, ...)`方法，则Father的实例属性也将被继承；反之，Father的实例属性将全部丢弃。  
     - 如果在Son中重写了方法，如何再次调用父类方法？  
-    答：使用`super()`函数,例如在Son类的`__init__(self, ...)`方法中写入`super().__init__(self, ...)`,可调用Father方法，同时继承了Father的属性。
+    答：使用`super()`函数,例如在Son类的`__init__(self, ...)`方法中写入`super().__init__(self, ...)`,可调用Father方法，重新继承Father的实例属性。
